@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Exo+2:wght@300&family=Inter:wght@300&family=Josefin+Sans:wght@500&family=Montserrat:wght@300;400&family=Open+Sans&family=Prompt:wght@300&family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --theme-font-color: #fff;
+  --theme-bg-color: #eeeeee;
+  --theme-btn-bg: #3273dc;
+  --theme-container-bg-color: #fff;
+  --ballu-bhai-font: "Baloo Bhai 2", cursive;
+  --exo-font: "Exo 2", sans-serif;
+  --inter-font: "Inter", sans-serif;
+  --josefin-font: "Josefin Sans", sans-serif;
+  --open-sans-font: "Open Sans", sans-serif;
+  --roboto-font: "Roboto", sans-serif;
+  font-size: 16px;
+}
+input {
+  font-size: 1rem;
+}
+body {
+  background-color: var(--theme-bg-color);
+}
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin-inline: auto;
+  height: 100%;
+}
+.card {
+  background-color: white;
+  width: 100%;
+  max-width: 320px;
+  padding: 10px 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.card button,
+.btn,
+.card a {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  text-decoration: none;
+  padding: 3px 12px;
+  border-radius: 3px;
+  font-family: var(--ballu-bhai-font);
+  font-size: 1rem;
+  margin: 10px 0;
+  cursor: pointer;
+  background-color: rgba(50, 115, 220, 0.9);
+  display: inline-block;
+}
+
+.btn:active,
+button:active {
+  transform: scale(0.98);
+}
+
+.card button:hover,
+.card a:hover,
+.btn:hover {
+  background-color: #3273dc;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.form-input {
+  padding: 6px 12px;
+  border: none;
+  outline: none;
+  border: 1px solid silver;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.form-input:focus {
+  border-color: var(--theme-btn-bg);
+}
+.form-control button {
+  width: 150px;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(50, 115, 220, 0.9);
+  font-family: var(--ballu-bhai-font);
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.form-control button:active {
+  transform: scale(0.98);
+}
+.form-control label {
+  font-weight: 600;
+  color: #333;
+}
+.form-control .gender {
+  display: flex;
+  gap: 2px 5px;
+  align-items: center;
+}
+
+.form-control button:hover {
+  background-color: #3273dc;
+}
+
+.window-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  display: none;
+  place-items: center;
+}
+
+.window {
+  background-color: white;
+  width: 95%;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.win-title {
+  display: flex;
+  justify-content: space-between;
+}
+.win-title button {
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: 1.3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.win-title button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.open-win {
+  display: grid;
+}
+
+@media (max-width: 508px) {
+  /* .window {
+    width: 100%;
+    height: 40vh;
+    border-radius: 0;
+  } */
+}

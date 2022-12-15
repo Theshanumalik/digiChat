@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="PAPLUCHAT is an online chat application that allows user to chat each other Realtime with no data leak issue. Now, it is so easy to keep in touch with friends and loved ones with this online real time chat app."
+    />
+    <meta
+      name="keywords"
+      content="papluchat, realtime chat app, theshanumalik, shanu malik, omeagle, chat, online chat, whatsapp chat groups"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <link rel="stylesheet" href="/static/css/utilities.css" />
+    <link rel="stylesheet" href="/static/css/nav.css" />
+    <link rel="stylesheet" href="/static/css/dashboard.css" />
+    <% if(typeof(id) != 'undefined'){ %>
+    <title>Welcome, <%-name-%> | PAPLUCHAT</title>
+    <% } %>
+  </head>
+  <body>
+    <%- include('navbar') -%>
+    <main>
+      <div class="container">
+        <div class="greatings">
+          <h1>
+            <i class="fa fas fa-heart" style="color: tomato"></i>
+            Welcome, <%-name-%>
+          </h1>
+        </div>
+        <div class="features">
+          <div class="card">
+            <h3><i class="fa-solid fa-comments"></i> OPEN CHAT</h3>
+            <p>
+              Chat openly with all the memebers of PAPLUCHAT. Hosted by
+              PAPLUCHAT TEAM.
+            </p>
+            <a href="/open"
+              ><i class="fa-solid fa-up-right-from-square"></i> Start
+              chatting</a
+            >
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-people-group"></i> CREATE GROUP</h3>
+            <p>
+              Create your own group. where you can invite people exclusivly
+              whoever you want.
+            </p>
+            <button onclick="toggleClass('data-window-backdrop', 'open-win')">
+              <i class="fa-solid fa-plus"></i> Create new group
+            </button>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-user-secret"></i> ANONYMOUS CHAT</h3>
+            <p>
+              Genarate a private link and anyone can chat by visiting the link.
+              No login required to join
+            </p>
+            <a href="/notAvailable"
+              ><i class="fa-solid fa-link"></i> Genarate Link</a
+            >
+          </div>
+        </div>
+
+        <div class="groups" style="display: none">
+          <h2>Groups that you have created</h2>
+          <div class="groups-container">
+            <div class="group-card">
+              <img src="/static/img/admin.png" alt="group-name" />
+              <h3>Friends Forever</h3>
+              <a href="#">Chat now</a>
+            </div>
+            <div class="group-card">
+              <img src="/static/img/admin.png" alt="group-name" />
+              <h3>Friends Forever</h3>
+              <a href="#">Chat now</a>
+            </div>
+            <div class="group-card">
+              <img src="/static/img/admin.png" alt="group-name" />
+              <h3>Friends Forever</h3>
+              <a href="#">Chat now</a>
+            </div>
+            <div class="group-card">
+              <img src="/static/img/admin.png" alt="group-name" />
+              <h3>Friends Forever</h3>
+              <a href="#">Chat now</a>
+            </div>
+            <div class="group-card">
+              <img src="/static/img/admin.png" alt="group-name" />
+              <h3>Friends Forever</h3>
+              <a href="#">Chat now</a>
+            </div>
+            <div class="group-card">
+              <img src="/static/img/admin.png" alt="group-name" />
+              <h3>Friends Forever</h3>
+              <a href="#">Chat now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="window-backdrop" data-window-backdrop>
+      <div class="window">
+        <div class="win-title">
+          <h2>CREATE GROUP</h2>
+          <button onclick="toggleClass('data-window-backdrop', 'open-win')">
+            <i class="fa fas fa-times"></i>
+          </button>
+        </div>
+        <div class="win-form">
+          <form action="/notAvailable">
+            <div class="form-control">
+              <label for="name">Group name</label>
+              <input
+                type="text"
+                class="form-input"
+                id="name"
+                placeholder="@paplusquad"
+              />
+            </div>
+            <div class="form-control">
+              <label for="key">Secret key</label>
+              <input
+                type="password"
+                id="key"
+                class="form-input"
+                placeholder="Secret key"
+              />
+            </div>
+            <div class="form-control">
+              <button class="btn">
+                <i class="fa-solid fa-plus"></i> Create group
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <% if(typeof(id) != 'undefined'){ %>
+    <script>
+      let userInfo = {
+        name: "<%- name %>",
+        id: "<%- id %>",
+        gender: "<%- gender %>",
+      };
+    </script>
+    <% } %>
+    <script>
+      const hamBtn = document.getElementById("ham-btn");
+      hamBtn.onclick = function () {
+        document.querySelector(".active-list").classList.toggle("show");
+      };
+
+      function toggleClass(attribute, className) {
+        document
+          .querySelector(`[${attribute}]`)
+          .classList.toggle(`${className}`);
+      }
+    </script>
+  </body>
+</html>

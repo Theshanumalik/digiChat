@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="PAPLUCHAT is an online chat application that allows user to chat each other Realtime with no data leak issue. Now, it is so easy to keep in touch with friends and loved ones with this online real time chat app."
+    />
+    <meta
+      name="keywords"
+      content="papluchat, realtime chat app, theshanumalik, shanu malik, omeagle, chat, online chat, whatsapp chat groups"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <link rel="stylesheet" href="/static/css/utilities.css" />
+    <link rel="stylesheet" href="/static/css/open.css" />
+    <link rel="stylesheet" href="/static/css/nav.css" />
+    <% if(typeof(id) != 'undefined'){ %>
+    <title>Welcome, <%-name-%> | PAPLUCHAT</title>
+    <% } %>
+  </head>
+  <body>
+    <%- include('navbar') -%>
+    <section class="chat-container">
+      <aside class="active-list" id="members-menu">
+        <h3>Active</h3>
+        <hr />
+        <ul id="active-user-list"></ul>
+      </aside>
+      <div class="chat-container-main">
+        <div class="messeges" id="chat-container"></div>
+        <form id="chat-form">
+          <input
+            type="text"
+            id="my-message"
+            autofocus
+            placeholder="type a message..."
+            maxlength="100"
+          />
+          <button><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </section>
+    <div class="extra-space"></div>
+    <% if(typeof(id) != 'undefined'){ %>
+    <script>
+      let userInfo = {
+        name: "<%- name %>",
+        id: "<%- id %>",
+        gender: "<%- gender %>",
+        groupId: "<%- groupId -%>",
+      };
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/openchat.js"></script>
+    <% } %>
+    <script>
+      const hamBtn = document.getElementById("ham-btn");
+      hamBtn.onclick = function () {
+        document.querySelector(".active-list").classList.toggle("show");
+      };
+    </script>
+  </body>
+</html>

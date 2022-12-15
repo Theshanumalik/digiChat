@@ -1,0 +1,50 @@
+<form action="/auth/register" method="post" class="login-form">
+  <h3>Register</h3>
+  <% if(typeof(msg) != 'undefined') { %>
+  <div class="errorMsg"><%- msg -%></div>
+  <% } %>
+  <div class="form-control">
+    <div class="form-control">
+      <label for="name">Enter name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        value="<%= typeof(name) != 'undefined' ? name : ''%>"
+        class="form-input"
+      />
+    </div>
+    <label for="mobile">Enter mobile number</label>
+    <input
+      type="tel"
+      id="mobile"
+      name="mobile"
+      required
+      value="<%= typeof(mobile) != 'undefined' ? mobile : ''%>"
+      class="form-input"
+    />
+  </div>
+  <div class="form-control">
+    <label for="password">Enter password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      value="<%= typeof(password) != 'undefined' ? password : ''%>"
+      class="form-input"
+    />
+  </div>
+  <div class="form-control">
+    <div class="gender">
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="femail" value="female" />
+      <label for="femail">Female</label>
+    </div>
+  </div>
+  <div class="form-control">
+    <button>Register now</button>
+  </div>
+</form>

@@ -1,0 +1,51 @@
+<form action="/auth/login" method="post" class="login-form">
+  <h3>Login</h3>
+  <% if(typeof(msg) != 'undefined') { %>
+  <div class="errorMsg"><%- msg -%></div>
+  <% } %>
+  <div class="form-control">
+    <label for="mobile">Enter mobile number</label>
+    <input
+      type="tel"
+      id="mobile"
+      name="mobile"
+      required
+      value="<%= typeof(mobile) != 'undefined' ? mobile : ''%>"
+      class="form-input"
+    />
+  </div>
+  <div class="form-control">
+    <label for="password">Enter password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      value="<%= typeof(password) != 'undefined' ? password : ''%>"
+      class="form-input"
+    />
+  </div>
+  <div class="form-control">
+    <button>Login now</button>
+  </div>
+</form>
+
+<!-- <section class="join-box">
+  <form action="/auth/login" method="post">
+    <h2>Login</h2>
+    
+    <input
+      type="text"
+      name="mobile"
+      placeholder="Enter mobile numeber"
+      
+    />
+    <input
+      type="password"
+      name="password"
+      placeholder="Enter Keypass"
+      
+    />
+    <input type="submit" value="Login" class="btn submit" />
+  </form>
+</section> -->
