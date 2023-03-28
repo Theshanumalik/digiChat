@@ -1,5 +1,5 @@
 const DB_URI =
-  "mongodb+srv://theshanumalik:bEUJgpTu9ac7TbeP@cluster0.p9na2.mongodb.net/papluchat?retryWrites=true&w=majority";
+  "mongodb+srv://theshanumalik:ZFAQWVA2oG932Qcw@cluster0.p9na2.mongodb.net/papluchat?retryWrites=true&w=majority";
 
 const JWT_SECRET = "9q8rhv7788vadfkqhoe7r-19038";
 
